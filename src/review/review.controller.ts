@@ -11,13 +11,17 @@ import {
 import { CreateReviewDto } from './dto/create-review.dto';
 import { ReviewService } from './review.service';
 import { REVIEW_NOT_FOUND } from './review.constants';
+import { DocumentType } from '@typegoose/typegoose/lib/types';
+import { ReviewModel } from './review.model';
 
 @Controller('review')
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}
 
   @Post('create')
-  async create(@Body() dto: CreateReviewDto) {
+  async create(
+    @Body() dto: CreateReviewDto,
+  ): Promise<DocumentType<ReviewModel>> {
     return this.reviewService.create(dto);
   }
 
