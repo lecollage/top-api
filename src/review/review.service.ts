@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ReviewModel } from './review.model';
 import { DocumentType, ModelType } from '@typegoose/typegoose/lib/types';
 import { Types } from 'mongoose';
+import { DeleteResult } from 'mongodb';
 import { InjectModel } from 'nestjs-typegoose';
 
 import { CreateReviewDto } from './dto/create-review.dto';
@@ -26,6 +27,12 @@ export class ReviewService {
   ): Promise<DocumentType<ReviewModel>[]> {
     return this.reviewModel
       .find({ productId: new Types.ObjectId(productId) })
+      .exec();
+  }
+
+  async deleteByProductId(productId: string): Promise<DeleteResult> {
+    return this.reviewModel
+      .deleteMany({ productId: new Types.ObjectId(productId) })
       .exec();
   }
 }
