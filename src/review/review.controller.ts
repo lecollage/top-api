@@ -18,6 +18,7 @@ import { ReviewService } from './review.service';
 import { REVIEW_NOT_FOUND } from './review.constants';
 import { ReviewModel } from './review.model';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+import { UserEmail } from '../decorators/user-email.decorator';
 
 @Controller('review')
 export class ReviewController {
@@ -33,7 +34,9 @@ export class ReviewController {
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  async delete(@Param('id') id: string) {
+  async delete(@Param('id') id: string, @UserEmail() email: string) {
+    console.log(`email: `, email);
+
     const deletedDoc = this.reviewService.delete(id);
 
     if (!deletedDoc) {
