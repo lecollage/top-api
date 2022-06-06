@@ -34,10 +34,11 @@ export class ReviewController {
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  async delete(@Param('id') id: string, @UserEmail() email: string) {
-    console.log(`email: `, email);
-
-    const deletedDoc = this.reviewService.delete(id);
+  async delete(
+    @Param('id') id: string,
+    @UserEmail() email: string,
+  ): Promise<void> {
+    const deletedDoc = await this.reviewService.delete(id);
 
     if (!deletedDoc) {
       throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
@@ -45,7 +46,9 @@ export class ReviewController {
   }
 
   @Get('byProduct/:productId')
-  async getByProduct(@Param('productId') productId: string) {
+  async getByProduct(
+    @Param('productId') productId: string,
+  ): Promise<DocumentType<ReviewModel>[]> {
     return this.reviewService.findByProductId(productId);
   }
 
