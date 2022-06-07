@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "da00414f-603d-480d-ba72-f27cd9261238",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2928490"
+	},
+	"item": [
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"test1@test.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"test1@test.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review/byProductId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/review/byProduct/629534b4575e3f1d1971a455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"review",
+						"byProduct",
+						"629534b4575e3f1d1971a455"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"create review 1\",\r\n  \"title\": \"create review 1\",\r\n  \"description\": \"create review 1\",\r\n  \"rating\": 1,\r\n  \"productId\": \"629e714e36be9358f6b9a661\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/review/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"review",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review/delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/review/629ccbdb83383a49ea7288d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"review",
+						"629ccbdb83383a49ea7288d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review/getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/review/getAllProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"review",
+						"getAllProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/find",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"category\": \"test-category\",\r\n\t\"limit\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/product/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"product",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"image\": \"test.png\",\r\n\t\"title\": \"Test\",\r\n\t\"link\": \"Test\",\r\n\t\"initialRating\": 1,\r\n\t\"price\": 100,\r\n\t\"oldPrice\": 120,\r\n\t\"credit\": 10,\r\n\t\"description\": \"Test description\",\r\n\t\"advantages\": \"Test advantages\",\r\n\t\"disAdvantages\": \"Test disAdvantages\",\r\n\t\"categories\": [\"test-category\"],\r\n\t\"tags\": [\"test-tag\"],\r\n\t\"characteristics\": [{\r\n\t\t\"name\": \"test-name\",\r\n\t\t\"value\": \"test-value\"\r\n\t}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/product/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"image\": \"test.png\",\r\n\t\"title\": \"Test 2\",\r\n\t\"link\": \"Test\",\r\n\t\"initialRating\": 1,\r\n\t\"price\": 100,\r\n\t\"oldPrice\": 130,\r\n\t\"credit\": 10,\r\n\t\"description\": \"Test description\",\r\n\t\"advantages\": \"Test advantages\",\r\n\t\"disAdvantages?\": \"Test disAdvantages\",\r\n\t\"categories\": [\"test-category\"],\r\n\t\"tags\": [\"test-tag\"],\r\n\t\"characteristics\": [{\r\n\t\t\"name\": \"Характеристика 1\",\r\n\t\t\"value\": \"Значение характеристики 1\"\r\n\t}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/product/629faeb4ef4082d696d7f4c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"product",
+						"629faeb4ef4082d696d7f4c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"image\": \"test.png\",\r\n\t\"title\": \"Test\",\r\n\t\"link\": \"Test\",\r\n\t\"initialRating\": 1,\r\n\t\"price\": 100,\r\n\t\"oldPrice\": 120,\r\n\t\"credit\": 10,\r\n\t\"description\": \"Test description\",\r\n\t\"advantages\": \"Test advantages\",\r\n\t\"disAdvantages?\": \"Test disAdvantages\",\r\n\t\"categories\": [\"test-category\"],\r\n\t\"tags\": [\"test-tag\"],\r\n\t\"characteristics\": [{\r\n\t\t\"name\": \"test-name\",\r\n\t\t\"value\": \"test-value\"\r\n\t}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/product/629e702336be9358f6b9a654",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"product",
+						"629e702336be9358f6b9a654"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstCategory\":  0,\r\n  \"secondCategory\":  \"test\",\r\n  \"alias\":  \"test\",\r\n  \"title\":  \"test\",\r\n  \"category\":  \"test\",\r\n  \"advantages\":  [{\r\n    \"title\": \"test\",\r\n    \"description\": \"test\"\r\n  }],\r\n  \"seoText\":  \"\",\r\n  \"tagsTitle\":  \"\",\r\n  \"tags\":  [\"test\"],\r\n  \"hh\": [\r\n    {\r\n      \"count\": 0,\r\n      \"juniorSalary\": 0,\r\n      \"middleSalary\": 0,\r\n      \"seniorSalary\": 0,\r\n      \"updatedAt\": \"2022-06-07T20:23:40.651Z\"\r\n    }]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
