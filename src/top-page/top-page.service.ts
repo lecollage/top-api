@@ -38,10 +38,21 @@ export class TopPageService {
 
   async find(dto: FindTopPageDto): Promise<TopPageModel[]> {
     return this.topPageModel
-      .find(
-        { firstCategory: dto.firstCategory },
-        { alias: 1, secondCategory: 1, title: 1 },
-      )
+      .aggregate()
+      .match({
+        firstCategory: dto.firstCategory,
+      })
+      .group({
+        _id: { secondCategory: '$secondCategory' },
+        pages: {
+          $push: {
+            alias: '$alias',
+            title: '$title',
+            _id: '$_id',
+            category: '$category',
+          },
+        },
+      })
       .exec();
   }
 
