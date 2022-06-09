@@ -101,7 +101,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"create review 1\",\r\n  \"title\": \"create review 1\",\r\n  \"description\": \"create review 1\",\r\n  \"rating\": 1,\r\n  \"productId\": \"629e714e36be9358f6b9a661\"\r\n}",
+					"raw": "{\r\n  \"name\": \"create review 3\",\r\n  \"title\": \"create review 3\",\r\n  \"description\": \"create review 3\",\r\n  \"rating\": 3,\r\n  \"productId\": \"629faeb4ef4082d696d7f4c5\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -267,15 +267,6 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"image\": \"test.png\",\r\n\t\"title\": \"Test\",\r\n\t\"link\": \"Test\",\r\n\t\"initialRating\": 1,\r\n\t\"price\": 100,\r\n\t\"oldPrice\": 120,\r\n\t\"credit\": 10,\r\n\t\"description\": \"Test description\",\r\n\t\"advantages\": \"Test advantages\",\r\n\t\"disAdvantages?\": \"Test disAdvantages\",\r\n\t\"categories\": [\"test-category\"],\r\n\t\"tags\": [\"test-tag\"],\r\n\t\"characteristics\": [{\r\n\t\t\"name\": \"test-name\",\r\n\t\t\"value\": \"test-value\"\r\n\t}]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:3000/api/product/629e702336be9358f6b9a654",
 					"protocol": "http",
@@ -296,10 +287,16 @@
 			"name": "top-page/create",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"firstCategory\":  0,\r\n  \"secondCategory\":  \"test\",\r\n  \"alias\":  \"test\",\r\n  \"title\":  \"test\",\r\n  \"category\":  \"test\",\r\n  \"advantages\":  [{\r\n    \"title\": \"test\",\r\n    \"description\": \"test\"\r\n  }],\r\n  \"seoText\":  \"\",\r\n  \"tagsTitle\":  \"\",\r\n  \"tags\":  [\"test\"],\r\n  \"hh\": [\r\n    {\r\n      \"count\": 0,\r\n      \"juniorSalary\": 0,\r\n      \"middleSalary\": 0,\r\n      \"seniorSalary\": 0,\r\n      \"updatedAt\": \"2022-06-07T20:23:40.651Z\"\r\n    }]\r\n}\r\n",
+					"raw": "{\r\n  \"firstCategory\": 1,\r\n  \"secondCategory\": \"test\",\r\n  \"alias\": \"test 3\",\r\n  \"title\": \"test\",\r\n  \"category\": \"test\",\r\n  \"advantages\": [\r\n    {\r\n      \"title\": \"test\",\r\n      \"description\": \"test\"\r\n    }\r\n  ],\r\n  \"seoText\": \"\",\r\n  \"tagsTitle\": \"\",\r\n  \"tags\": [\r\n    \"test\"\r\n  ],\r\n  \"hh\": {\r\n    \"count\": 0,\r\n    \"juniorSalary\": 0,\r\n    \"middleSalary\": 0,\r\n    \"seniorSalary\": 0,\r\n    \"updatedAt\": \"2022-06-07T20:23:40.651Z\"\r\n  }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -317,6 +314,148 @@
 						"api",
 						"top-page",
 						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstCategory\": 1,\r\n  \"secondCategory\": \"test\",\r\n  \"alias\": \"test 666\",\r\n  \"title\": \"test\",\r\n  \"category\": \"test\",\r\n  \"advantages\": [\r\n    {\r\n      \"title\": \"test\",\r\n      \"description\": \"test\"\r\n    }\r\n  ],\r\n  \"seoText\": \"seoText 1\",\r\n  \"tagsTitle\": \"\",\r\n  \"tags\": [\r\n    \"test\"\r\n  ],\r\n  \"hh\": {\r\n    \"count\": 0,\r\n    \"juniorSalary\": 0,\r\n    \"middleSalary\": 0,\r\n    \"seniorSalary\": 0,\r\n    \"updatedAt\": \"2022-06-07T20:23:40.651Z\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/629fbf83ec8a1844fb14f4fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"629fbf83ec8a1844fb14f4fc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/findById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/629fb3cc90ead4370b6e6a3e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"629fb3cc90ead4370b6e6a3e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/textSearch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/text-search/seoText",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"text-search",
+						"seoText"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/deleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/629fb3cc90ead4370b6e6a3e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"629fb3cc90ead4370b6e6a3e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top-page/find",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstCategory\":  1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/top-page/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"top-page",
+						"find"
 					]
 				}
 			},
