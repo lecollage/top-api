@@ -16,8 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: Get current date # get the date of the build
+      - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
       - name: Docker build
