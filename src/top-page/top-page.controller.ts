@@ -88,4 +88,9 @@ export class TopPageController {
   async find(@Body() dto: FindTopPageDto): Promise<TopPageModel[]> {
     return this.topPageService.find(dto);
   }
+
+  @Get('text-search/:text')
+  async textSearch(@Param('text') text: string): Promise<TopPageModel[]> {
+    return this.topPageService.findByText(text);
+  }
 }
