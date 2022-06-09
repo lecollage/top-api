@@ -1,15 +1,6 @@
 version: '3.1'
 
 services:
-  top.api:
-    image: top-api:latest
-    container_name: top-api
-    restart: always
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./.env:/opt/app/.env
-
   mongo:
     image: mongo
     restart: always
@@ -18,6 +9,17 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - "27017:27017"
+
+  top.api:
+    image: top-api:latest
+    container_name: top-api
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.env:/opt/app/.env
+    depends_on:
+      - mongo
 
   mongo-express:
     image: mongo-express
