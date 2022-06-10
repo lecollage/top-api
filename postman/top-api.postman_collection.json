@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "da00414f-603d-480d-ba72-f27cd9261238",
-		"name": "test",
+		"name": "top-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "2928490"
 	},
@@ -21,12 +21,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/auth/login",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/auth/login",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"auth",
@@ -51,12 +49,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/auth/register",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/auth/register",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"auth",
@@ -78,12 +74,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/review/byProduct/629534b4575e3f1d1971a455",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/review/byProduct/629534b4575e3f1d1971a455",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"review",
@@ -109,12 +103,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/review/create",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/review/create",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"review",
@@ -136,12 +128,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/review/629ccbdb83383a49ea7288d2",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/review/629ccbdb83383a49ea7288d2",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"review",
@@ -157,12 +147,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/review/getAllProducts",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/review/getAllProducts",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"review",
@@ -187,12 +175,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/product/find",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/product/find",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"product",
@@ -217,12 +203,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/product/create",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/product/create",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"product",
@@ -247,12 +231,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/product/629faeb4ef4082d696d7f4c5",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/product/629faeb4ef4082d696d7f4c5",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"product",
@@ -268,12 +250,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/product/629e702336be9358f6b9a654",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/product/629e702336be9358f6b9a654",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"product",
@@ -304,12 +284,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/create",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/create",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
@@ -340,12 +318,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/629fbf83ec8a1844fb14f4fc",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/629fbf83ec8a1844fb14f4fc",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
@@ -367,12 +343,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/629fb3cc90ead4370b6e6a3e",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/629fb3cc90ead4370b6e6a3e",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
@@ -388,12 +362,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/text-search/seoText",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/text-search/seoText",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
@@ -416,12 +388,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/629fb3cc90ead4370b6e6a3e",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/629fb3cc90ead4370b6e6a3e",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
@@ -446,16 +416,87 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/top-page/find",
-					"protocol": "http",
+					"raw": "{{HOST}}/api/top-page/find",
 					"host": [
-						"localhost"
+						"{{HOST}}"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"top-page",
 						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "files/uploadFile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/eugene.kalashnikov/Downloads/IMG-20220601-WA0018.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/files/upload",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "files/get-file",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/eugene.kalashnikov/Downloads/IMG-20220601-WA0018.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/static/2022-06-10/IMG-20220601-WA0018.webp",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"static",
+						"2022-06-10",
+						"IMG-20220601-WA0018.webp"
 					]
 				}
 			},
