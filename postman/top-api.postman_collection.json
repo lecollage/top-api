@@ -117,6 +117,34 @@
 			"response": []
 		},
 		{
+			"name": "review/notify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"create review 3\",\r\n  \"title\": \"create review 3\",\r\n  \"description\": \"create review 3\",\r\n  \"rating\": 3,\r\n  \"productId\": \"62a4beff60eec9d1882ea276\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/review/notify",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"review",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "review/delete by id",
 			"request": {
 				"method": "DELETE",
@@ -192,7 +220,13 @@
 			"name": "product/create",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{AUTH_HEADER_VALUE}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"image\": \"test.png\",\r\n\t\"title\": \"Test\",\r\n\t\"link\": \"Test\",\r\n\t\"initialRating\": 1,\r\n\t\"price\": 100,\r\n\t\"oldPrice\": 120,\r\n\t\"credit\": 10,\r\n\t\"description\": \"Test description\",\r\n\t\"advantages\": \"Test advantages\",\r\n\t\"disAdvantages\": \"Test disAdvantages\",\r\n\t\"categories\": [\"test-category\"],\r\n\t\"tags\": [\"test-tag\"],\r\n\t\"characteristics\": [{\r\n\t\t\"name\": \"test-name\",\r\n\t\t\"value\": \"test-value\"\r\n\t}]\r\n}",
